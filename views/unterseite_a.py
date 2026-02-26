@@ -1,7 +1,7 @@
 import streamlit as st  #streamlit importieren hier 
 
 st.title("🩺 Interaktiver GFR-Rechner (CKD-EPI)") #Titel wird do ahzeigt
-st.write("Berechnen Sie die geschätzte glomeruläre Filtrationsrate basierend auf Laborwerten.") #das isch sone untertitel und wird au in de App ahzeigt 
+st.write("Nieren-Check: Wie fit sind Ihre Filter?") #das isch sone untertitel und wird au in de App ahzeigt 
 
 #ab do kann man sache ihgeh damit die funktion au funktioniert 
 col1, col2 = st.columns(2)
