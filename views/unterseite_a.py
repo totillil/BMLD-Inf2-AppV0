@@ -40,10 +40,28 @@ if st.button("GFR berechnen"):
     # Farbe die typische rot, gelb, grün 
     if result >= 90:
         st.success(f"Ergebnis: {result:.1f} ml/min/1.73m² (Normal)")
+
+        with st.expander("✅ Tipps für Ihre Nierengesundheit"):
+            st.write("Ihre Werte sind im grünen Bereich. So halten Sie Ihre Nieren fit:")
+            st.markdown("- **Flüssigkeit:** Trinken Sie ausreichend Wasser (1,5 - 2 Liter).")
+            st.markdown("- **Bewegung:** Regelmäßiger Sport schützt die Gefäße.")
+
     elif result >= 60:
         st.warning(f"Ergebnis: {result:.1f} ml/min/1.73m² (Leichte Einschränkung)")
+
+        with st.expander("⚠️ Was Sie jetzt tun können"):
+            st.info("Ihre Nierenfunktion ist leicht vermindert. Das ist oft stabil, sollte aber beobachtet werden.")
+            st.markdown("- **Blutdruck:** Regelmäßig kontrollieren (Ziel meist < 130/80 mmHg).")
+            st.markdown("- **Vorsicht:** Meiden Sie nierenschädliche Schmerzmittel wie Ibuprofen oder Diclofenac.")
+        
     else:
         st.error(f"Ergebnis: {result:.1f} ml/min/1.73m² (Moderater bis schwerer Nierenfunktionsverlust)")
+
+        with st.expander("🚨 Wichtige nächste Schritte"):
+            st.markdown("### **Suchen Sie bitte einen Arzt (Nephrologen) auf.**")
+            st.write("Weitere Diagnostik ist notwendig:")
+            st.markdown("- **Urin-Check:** Untersuchung auf Eiweiß (Albumin).")
+            st.markdown("- **Medikamenten-Check:** Besprechen Sie alle Tabletten mit Ihrem Arzt.")
 
     # Zusatzinfo
     st.info("💡 Ein Wert unter 60 über mehr als 3 Monate deutet auf eine chronische Nierenerkrankung hin.")
