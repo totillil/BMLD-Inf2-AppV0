@@ -8,9 +8,22 @@ import pandas as pd
 # =========================================================
 # 1)  DESIGN (CSS)  Hier sind die Designs der App aufgeführt
 # =========================================================
+# =========================================================
+# 1) DESIGN (CSS) - KORRIGIERT FÜR BESSERE LESBARKEIT
+# =========================================================
 st.markdown("""
 <style>
-.stApp { background-color: #FFF6FA; }
+/* --- App Hintergrund --- */
+/* Wir setzen ein etwas kräftigeres Rosa, damit der Kontrast besser ist */
+.stApp {
+    background-color: #FFB3D1; /* Ein gesättigteres Rosa */
+}
+
+/* --- Globale Textfarben --- */
+/* Wir zwingen alle h1 Titel und normalen Text auf eine dunkle Farbe */
+h1, p, span, div {
+    color: #4B0082 !important; /* Ein dunkles Indigo/Violett für besten Kontrast */
+}
 
 /* --- Standard Cards --- */
 .cute-card {
@@ -38,15 +51,15 @@ st.markdown("""
 /* --- Standard Buttons --- */
 div.stButton > button {
     background-color: #FFD6E8;
-    color: #222;
+    color: #4B0082 !important; /* Dunkler Text auf dem Button */
     border-radius: 22px;
     border: none;
     padding: 0.6em 1.1em;
     font-weight: 700;
 }
 div.stButton > button:hover {
-    background-color: #FFB3D1;
-    color: white;
+    background-color: #4B0082; /* Dunkler Hintergrund beim Drüberfahren */
+    color: white !important; /* Weißer Text beim Drüberfahren */
 }
 
 /* --- Sticky App Header --- */
@@ -54,7 +67,8 @@ div.stButton > button:hover {
     position: sticky;
     top: 0;
     z-index: 999;
-    background: rgba(255, 246, 250, 0.92);
+    /* Hintergrund des Headers leicht transparent, aber dunkel genug */
+    background: rgba(255, 179, 209, 0.95);
     backdrop-filter: blur(8px);
     padding: 10px 6px 12px 6px;
     border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -80,6 +94,7 @@ div.stButton > button:hover {
     display: inline-block;
     box-shadow: 0px 6px 16px rgba(0,0,0,0.08);
     font-weight: 800;
+    color: #4B0082 !important;
 }
 .header-score {
     background-color: #E6F7FF;
@@ -88,9 +103,12 @@ div.stButton > button:hover {
     display: inline-block;
     box-shadow: 0px 6px 16px rgba(0,0,0,0.08);
     font-weight: 800;
+    color: #4B0082 !important;
 }
+/* Spezifisches Styling für Buttons im Header */
 .app-header div.stButton > button {
-    background-color: #FFD6E8 !important;
+    background-color: #FFE4F1 !important;
+    color: #4B0082 !important;
     border-radius: 999px !important;
     padding: 0.45em 1.0em !important;
     font-weight: 800 !important;
@@ -98,7 +116,7 @@ div.stButton > button:hover {
     box-shadow: 0px 6px 16px rgba(0,0,0,0.08) !important;
 }
 .app-header div.stButton > button:hover {
-    background-color: #FFB3D1 !important;
+    background-color: #4B0082 !important;
     color: white !important;
 }
 
@@ -121,11 +139,13 @@ div.stButton > button:hover {
     font-weight: 900;
     font-size: 15px;
     margin-bottom: 6px;
+    color: #4B0082 !important;
 }
 .station-sub {
     font-size: 12px;
     opacity: 0.7;
     margin-bottom: 10px;
+    color: #4B0082 !important;
 }
 .station-badge {
     display: inline-block;
@@ -134,6 +154,7 @@ div.stButton > button:hover {
     border-radius: 999px;
     font-size: 12px;
     font-weight: 800;
+    color: #4B0082 !important;
 }
 
 /* --- Cute Agar + Mikroskop Screens --- */
@@ -162,6 +183,7 @@ div.stButton > button:hover {
     font-weight: 800;
     font-size: 18px;
     margin-bottom: 8px;
+    color: #4B0082 !important;
 }
 .microscope-box {
     background: #E6F7FF;
@@ -183,6 +205,7 @@ div.stButton > button:hover {
 .gram-step-title {
     font-weight: 800;
     margin-bottom: 8px;
+    color: #4B0082 !important;
 }
 .big-emoji {
     font-size: 44px;
@@ -196,9 +219,11 @@ div.stButton > button:hover {
     box-shadow: 0px 4px 12px rgba(0,0,0,0.05);
     margin-top: 10px;
     margin-bottom: 14px;
+    color: #4B0082 !important;
 }
 </style>
 """, unsafe_allow_html=True)
+
 
 # =========================================================
 # 2) SESSION STATE
