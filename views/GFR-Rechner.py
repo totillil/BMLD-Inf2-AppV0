@@ -1,6 +1,8 @@
 import streamlit as st 
 from functions.NierenCheck import calculate_gfr  #streamlit importieren hier 
 import pandas as pd
+from utils.data_manager import DataManager
+from utils.login_manager import LoginManager
 
 # Initialisierung des DataFrames für die Historie
 if 'history' not in st.session_state:
@@ -39,7 +41,8 @@ if st.button("GFR berechnen"):
     }
     # Hier werden die neuen Daten in den Session State geschrieben
     st.session_state['history'] = pd.concat([st.session_state['history'], pd.DataFrame([new_entry])], ignore_index=True)
-
+    data_manager = DataManager()
+    data_manager.save_user_data(st.session_state['history'], 'data.csv')  # Speichern der Historie auf dem Switch Drive
     # Farbe die typische rot, gelb, grün 
     if result >= 90:
         st.success(f"Ergebnis: {result:.1f} ml/min/1.73m² (Normal)")
